@@ -1,0 +1,50 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Sat May 25 18:15:15 2024
+[*]
+[dumpfile] "/home/stas/git/bk0010sim/tb_bk0010.lxt"
+[dumpfile_mtime] "Sat May 25 18:13:42 2024"
+[dumpfile_size] 300034
+[savefile] "/home/stas/git/bk0010sim/tb_bk0010.gtkw"
+[timestart] 0
+[size] 1916 1053
+[pos] -1 -1
+*-22.000000 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] bk0010.
+[treeopen] bk0010.CPU.
+[treeopen] bk0010.CPU.core.
+[sst_width] 224
+[signals_width] 238
+[sst_expanded] 1
+[sst_vpaned_height] 307
+@28
+bk0010.cpu_clk[0]
+bk0010.CPU.pin_dclo_n[0]
+bk0010.CPU.pin_aclo_n[0]
+bk0010.CPU.pin_bsy_n[0]
+@70
+bk0010.CPU.pin_ad_n[15:0]
+@28
+bk0010.CPU.pin_sync_n[0]
+bk0010.CPU.pin_wtbt_n[0]
+bk0010.CPU.pin_din_n[0]
+bk0010.CPU.pin_dout_n[0]
+bk0010.rply_n[0]
+bk0010.CPU.pin_rply_n[0]
+bk0010.PLA.PIN_CLK[0]
+@22
+bk0010.PLA.PIN_A[6:0]
+@28
+bk0010.PLA.PIN_nRAS[0]
+bk0010.PLA.PIN_nCAS[1:0]
+bk0010.PLA.PIN_nWE[0]
+bk0010.PLA.PIN_WTD[0]
+bk0010.PLA.PIN_WTI[0]
+bk0010.vR[1:0]
+bk0010.vG[0]
+bk0010.vB[0]
+bk0010.vC[0]
+bk0010.PLA.PIN_nVSYNC[0]
+bk0010.d11_q2[0]
+[pattern_trace] 1
+[pattern_trace] 0
