@@ -13,6 +13,10 @@
 `define WITH_FRAME_IRQ
 `define BK0011M_CLK
 
+// Дополнительная задержка RPLY
+
+`define RPLY_SYN_CHAIN 1
+
 module bk0010;
 
 reg osc_clk, cpu_clk;
@@ -39,13 +43,14 @@ assign (highz0, pull1)
 
 // Синхронизатор сигнала nRPLY
 
-reg rply_syn;
-wire cpu_rply_n;
+reg [`RPLY_SYN_CHAIN:0] rply_syn;
 
 always @(negedge cpu_clk)
-    rply_syn <= rply_n;
+    rply_syn <= rply_syn << 1 | rply_n;
 
-buf (pull0, pull1) (cpu_rply_n, rply_syn);
+wire cpu_rply_n;
+
+buf (pull0, pull1) (cpu_rply_n, rply_syn[`RPLY_SYN_CHAIN]);
 
 // Микропроцессор K1801BM1 (синхронная версия)
 
