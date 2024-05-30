@@ -252,6 +252,11 @@ always @(posedge pal_reg_wr)
 
 `endif
 
+
+// Неиспользуемые входы запросов прерываний
+
+assign {irq_n[1], irq_n[3]} = 2'b11;
+
 `ifdef WITH_FRAME_IRQ
 
 //
@@ -264,12 +269,11 @@ wire irq2_en = pal_reg[4];
 wire irq2_en = 1'b1;
 `endif
 
-assign {irq_n[1], irq_n[3]} = 2'b11;
-
 reg d28, d3, d11_q2;
 wire c28;
 
 assign irq_n[2] = d11_q2;
+
 assign c28 = ~(d28 | vsync_n);
 initial d28 = 1'b0;
 
@@ -286,6 +290,10 @@ always @(posedge vsync_n or negedge irq2_en)
 
 always @(posedge cpu_clk)
     d11_q2 <= ~d3;
+
+`else
+
+assign irq_n[2] = 1'b1;
 
 `endif
 
