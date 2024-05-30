@@ -1,22 +1,24 @@
 [*]
 [*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
-[*] Sat May 25 18:15:15 2024
+[*] Thu May 30 16:55:10 2024
 [*]
-[dumpfile] "/home/stas/git/bk0010sim/tb_bk0010.lxt"
-[dumpfile_mtime] "Sat May 25 18:13:42 2024"
-[dumpfile_size] 300034
-[savefile] "/home/stas/git/bk0010sim/tb_bk0010.gtkw"
+[dumpfile] "tb_bk0010.lxt"
+[dumpfile_mtime] "Thu May 30 16:54:06 2024"
+[dumpfile_size] 302969
+[savefile] "tb_bk0010.gtkw"
 [timestart] 0
 [size] 1916 1053
 [pos] -1 -1
-*-22.000000 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-21.000000 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] bk0010.
 [treeopen] bk0010.CPU.
 [treeopen] bk0010.CPU.core.
 [sst_width] 224
-[signals_width] 238
+[signals_width] 203
 [sst_expanded] 1
 [sst_vpaned_height] 307
+@200
+-CPU pins
 @28
 bk0010.cpu_clk[0]
 bk0010.CPU.pin_dclo_n[0]
@@ -31,6 +33,30 @@ bk0010.CPU.pin_din_n[0]
 bk0010.CPU.pin_dout_n[0]
 bk0010.rply_n[0]
 bk0010.CPU.pin_rply_n[0]
+@200
+-CPU regs
+@30
+bk0010.CPU.core.\gpr[0][15:0]
+bk0010.CPU.core.\gpr[1][15:0]
+bk0010.CPU.core.\gpr[2][15:0]
+bk0010.CPU.core.\gpr[3][15:0]
+bk0010.CPU.core.\gpr[4][15:0]
+bk0010.CPU.core.\gpr[5][15:0]
+@31
+bk0010.CPU.core.\gpr[6][15:0]
+@30
+bk0010.CPU.core.\gpr[7][15:0]
+@200
+-Timer regs
+@30
+bk0010.CPU.core.timer.tve_limit[15:0]
+bk0010.CPU.core.timer.tve_count[15:0]
+bk0010.CPU.core.timer.tve_csr[7:0]
+bk0010.CPU.core.timer.tve_pre[6:0]
+bk0010.CPU.core.timer.tve_div[5:0]
+@200
+-PLA pins
+@28
 bk0010.PLA.PIN_CLK[0]
 @22
 bk0010.PLA.PIN_A[6:0]
@@ -40,11 +66,23 @@ bk0010.PLA.PIN_nCAS[1:0]
 bk0010.PLA.PIN_nWE[0]
 bk0010.PLA.PIN_WTD[0]
 bk0010.PLA.PIN_WTI[0]
+@200
+-Video
+@c00028
 bk0010.vR[1:0]
+@28
+(0)bk0010.vR[1:0]
+(1)bk0010.vR[1:0]
+@1401200
+-group_end
+@28
 bk0010.vG[0]
 bk0010.vB[0]
 bk0010.vC[0]
 bk0010.PLA.PIN_nVSYNC[0]
+@200
+-IRQ
+@28
 bk0010.d11_q2[0]
 [pattern_trace] 1
 [pattern_trace] 0

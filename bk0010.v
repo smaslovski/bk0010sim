@@ -252,7 +252,6 @@ always @(posedge pal_reg_wr)
 
 `endif
 
-
 // Неиспользуемые входы запросов прерываний
 
 assign {irq_n[1], irq_n[3]} = 2'b11;
@@ -341,6 +340,10 @@ initial
     begin
         $dumpfile("tb_bk0010.lxt");
 	$dumpvars(0);
+
+	// Внутренние ресурсы процессора
+	for (i = 0; i < 14; i = i + 1)
+	    $dumpvars(0, CPU.core.gpr[i]);
 
 	// инициализация микропроцессора
 	dclo_n = 1'b0;
