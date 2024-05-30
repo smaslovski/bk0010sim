@@ -331,7 +331,7 @@ initial
 
 // Инициализация
 
-parameter time_limit = 3000*Tclk;
+parameter time_limit = 25000*Tclk;
 
 integer i;
 reg [15:0] code[0:16383];
