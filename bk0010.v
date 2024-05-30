@@ -326,10 +326,8 @@ initial
 
 parameter time_limit = 3000*Tclk;
 
-parameter code_len = 2842;
-
 integer i;
-reg [15:0] code[0:code_len-1];
+reg [15:0] code[0:16383];
 
 initial
     begin
@@ -341,19 +339,19 @@ initial
 	aclo_n = 1'b0;
 
 	// содержимое ОЗУ
+	$readmemh("pal.hex", code);
+
 	for (i = 0; i < 16384; i = i + 1)
-	    begin
-		RAM_0.mem[i] = 8'b11111111; // красный
-		RAM_1.mem[i] = 8'b01010101; // синий
-	    end
-
-	$readmemh("pal.hex", code, 0, code_len-1);
-
-	for (i = 0; i < code_len; i = i + 1)
-	    begin
-		RAM_0.mem[i] = code[i][7:0];
-		RAM_1.mem[i] = code[i][15:8];
-	    end
+	    if (code[i] === 16'bX)
+		begin
+		    RAM_0.mem[i] = 8'b11111111; // красный
+		    RAM_1.mem[i] = 8'b01010101; // синий
+		end
+	    else
+		begin
+		    RAM_0.mem[i] = code[i][7:0];
+		    RAM_1.mem[i] = code[i][15:8];
+		end
 
 	// содержимое ПЗУ
 	for (i = 0; i < 4096; i = i + 1)
