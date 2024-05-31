@@ -20,7 +20,7 @@
 
 module bk0010plus;
 
-parameter RANDOM_SEED = 1;
+parameter RANDOM_SEED = 26235;
 integer u_seed = RANDOM_SEED;
 
 reg osc_clk, cpu_clk;
@@ -359,8 +359,8 @@ initial
 	for (i = 0; i < 16384; i = i + 1)
 	    if (code[i] === 16'bX)
 		begin
-		    RAM_0.mem[i] = 8'b11111111; // красный
-		    RAM_1.mem[i] = 8'b01010101; // синий
+		    RAM_0.mem[i] = 8'b10101010; // синий
+		    RAM_1.mem[i] = 8'b01010101; // зеленый
 		end
 	    else
 		begin

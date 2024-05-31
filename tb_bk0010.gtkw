@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
-[*] Fri May 31 17:08:51 2024
+[*] Fri May 31 21:09:26 2024
 [*]
 [dumpfile] "tb_bk0010.lxt"
-[dumpfile_mtime] "Fri May 31 16:43:12 2024"
-[dumpfile_size] 2487421
+[dumpfile_mtime] "Fri May 31 21:05:10 2024"
+[dumpfile_size] 2495519
 [savefile] "tb_bk0010.gtkw"
-[timestart] 4012950000
+[timestart] 4027200000
 [size] 1916 1053
 [pos] -1 -1
-*-23.000000 4043282346 2583354 5000040 4115282922 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-25.000000 4092782742 2583354 5250042 56667120 87000696 4092782742 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] bk0010plus.
 [treeopen] bk0010plus.CPU.
 [treeopen] bk0010plus.CPU.core.
@@ -33,25 +33,14 @@ bk0010plus.CPU.pin_din_n[0]
 bk0010plus.CPU.pin_dout_n[0]
 bk0010plus.rply_n[0]
 bk0010plus.CPU.pin_rply_n[0]
-@200
--CPU regs
-@30
-bk0010plus.CPU.core.\gpr[0][15:0]
-bk0010plus.CPU.core.\gpr[1][15:0]
-bk0010plus.CPU.core.\gpr[2][15:0]
-bk0010plus.CPU.core.\gpr[3][15:0]
-bk0010plus.CPU.core.\gpr[4][15:0]
-bk0010plus.CPU.core.\gpr[5][15:0]
-bk0010plus.CPU.core.\gpr[6][15:0]
-bk0010plus.CPU.core.\gpr[7][15:0]
-@200
--Timer regs
-@30
-bk0010plus.CPU.core.timer.tve_limit[15:0]
-bk0010plus.CPU.core.timer.tve_count[15:0]
-bk0010plus.CPU.core.timer.tve_csr[7:0]
-bk0010plus.CPU.core.timer.tve_pre[6:0]
-bk0010plus.CPU.core.timer.tve_div[5:0]
+@c00070
+bk0010plus.CPU.pin_irq_n[3:1]
+@28
+(0)bk0010plus.CPU.pin_irq_n[3:1]
+(1)bk0010plus.CPU.pin_irq_n[3:1]
+(2)bk0010plus.CPU.pin_irq_n[3:1]
+@1401200
+-group_end
 @200
 -PLA pins
 @28
@@ -65,6 +54,33 @@ bk0010plus.PLA.PIN_nWE[0]
 bk0010plus.PLA.PIN_WTD[0]
 bk0010plus.PLA.PIN_WTI[0]
 @200
+-Video
+@70
+bk0010plus.pal_reg[4:0]
+@800029
+bk0010plus.vR[1:0]
+@29
+(0)bk0010plus.vR[1:0]
+(1)bk0010plus.vR[1:0]
+@1001201
+-group_end
+@28
+bk0010plus.vG[0]
+bk0010plus.vB[0]
+bk0010plus.vC[0]
+bk0010plus.PLA.PIN_nVSYNC[0]
+@200
+-CPU regs
+@30
+bk0010plus.CPU.core.\gpr[0][15:0]
+bk0010plus.CPU.core.\gpr[1][15:0]
+bk0010plus.CPU.core.\gpr[2][15:0]
+bk0010plus.CPU.core.\gpr[3][15:0]
+bk0010plus.CPU.core.\gpr[4][15:0]
+bk0010plus.CPU.core.\gpr[5][15:0]
+bk0010plus.CPU.core.\gpr[6][15:0]
+bk0010plus.CPU.core.\gpr[7][15:0]
+@200
 -PLA regs
 @28
 bk0010plus.PLA.PC[2:0]
@@ -76,24 +92,12 @@ bk0010plus.PLA.M256[0]
 @22
 bk0010plus.PLA.RA[7:0]
 @200
--Video
-@71
-bk0010plus.pal_reg[4:0]
-@c00028
-bk0010plus.vR[1:0]
-@28
-(0)bk0010plus.vR[1:0]
-(1)bk0010plus.vR[1:0]
-@1401200
--group_end
-@28
-bk0010plus.vG[0]
-bk0010plus.vB[0]
-bk0010plus.vC[0]
-bk0010plus.PLA.PIN_nVSYNC[0]
-@200
--IRQ
-@28
-bk0010plus.d11_q2[0]
+-Timer regs
+@30
+bk0010plus.CPU.core.timer.tve_limit[15:0]
+bk0010plus.CPU.core.timer.tve_count[15:0]
+bk0010plus.CPU.core.timer.tve_csr[7:0]
+bk0010plus.CPU.core.timer.tve_pre[6:0]
+bk0010plus.CPU.core.timer.tve_div[5:0]
 [pattern_trace] 1
 [pattern_trace] 0
