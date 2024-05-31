@@ -1,6 +1,6 @@
 //
-// Вариант BK-0010 с расширениями вроде регистра палитр как у БК-0011М
-// и с формирователем кадровых прерываний.
+// Вариация на тему BK-0010+ с расширениями вроде регистра палитр и формирователя
+// кадровых прерываний как у БК-0011М, с учетом фаз клоков К1801ВМ1 и 037й.
 //
 // (C) Stanislav Maslovski <stanislav.maslovski@gmail.com>
 //
@@ -18,6 +18,9 @@
 `define RPLY_SYN_CHAIN 1
 
 module bk0010;
+
+parameter RANDOM_SEED = 1;
+integer u_seed = RANDOM_SEED;
 
 reg osc_clk, cpu_clk;
 reg dclo_n, aclo_n;
@@ -393,11 +396,14 @@ initial
 	PLA.RA = 8'o330;
 	PLA.M256 = 1'b1;
 
-	// старт микропроцессора
-	#(10*Tclk);
-	dclo_n = 1'b1;
-	#(10*Tclk);
-	aclo_n = 1'b1;
+	// снятие DCLO
+	#(10*Tclk) dclo_n = 1'b1;
+
+	// случайное начальное значение пиксельного счетчика
+	PLA.PC[2:0] <= @(posedge pla_clk) $urandom(u_seed) % 8;
+
+        // снятие ACLO со случайной дополнительной задержкой
+	#((10 + $urandom % 2)*Tclk) aclo_n = 1'b1;
 
 	#(time_limit) $finish;
     end
