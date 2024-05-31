@@ -3,6 +3,7 @@ PROGRAM = tb_bk0010
 VERILOG = iverilog -Wall
 WAVEFORMS = tb_bk0010.lxt
 GTKWAVEFILE = tb_bk0010.gtkw
+DEFS=-Pbk0010plus.RANDOM_SEED=$(shell awk "BEGIN { print int(65536*rand()) }")
 LOGS=
 
 all: $(PROGRAM)
