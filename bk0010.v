@@ -17,7 +17,7 @@
 
 `define RPLY_SYN_CHAIN 1
 
-module bk0010;
+module bk0010plus;
 
 parameter RANDOM_SEED = 1;
 integer u_seed = RANDOM_SEED;
