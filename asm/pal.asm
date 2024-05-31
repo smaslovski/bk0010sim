@@ -9,6 +9,7 @@
 	. = 1000
 
 palreg	= 177662
+lcount	= 446
 
 start:
 	mtps	#0	; enable interrupts
@@ -21,10 +22,14 @@ loop:
 	mov	#7*400, r3
 	mov	#10.*400,r4
 	mov 	#7*400, r5
-	mov 	#443, delay+2
+	mov 	#lcount, delay+2
 delay:
-	dec	#443
+	dec	#lcount
 	bne	delay
+
+	mov	r0, r0
+	mov	r0, r0
+	mov	r1, (r0)
 
 	.rept	256.
 
